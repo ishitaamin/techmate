@@ -1,0 +1,23 @@
+# Web UI
+streamlit
+
+# Async HTTP + parsing
+httpx
+beautifulsoup4
+
+# Environment management
+python-dotenv
+
+# Google Gemini SDK
+google-generativeai
+
+# Machine learning embeddings + vector search
+sentence-transformers
+faiss-cpu
+numpy
+
+# Data validation & models
+pydantic
+
+# (Optional but recommended)
+requests   # in case you add fallback HTTP requests
