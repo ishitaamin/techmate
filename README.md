@@ -35,7 +35,7 @@ It helps users query information, get summarized results, and perform advanced r
       <strong>Ishita Amin</strong><br/>
       👩‍💻 B.Tech CSE @ Navrachana University<br/>
       📬 <a href="mailto:aminishita30@gmail.com">aminishita30@gmail.com</a><br/>
-      🔗 <a href="[https://linkedin.com/in/ishitaamin](https://www.linkedin.com/in/ishita-amin-841726253)" target="_blank">LinkedIn</a><br/>
+      🔗 <a href="[https://www.linkedin.com/in/ishita-amin-841726253]" target="_blank">LinkedIn</a><br/>
     </td>
   </tr>
 </table>
