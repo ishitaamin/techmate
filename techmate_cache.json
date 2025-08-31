@@ -1,128 +1,497 @@
 {
   "queries": [
     {
-      "query": "I can\u2019t connect WiFi on my phone.",
+      "query": "WiFi disconnects after sleep on Windows 11",
       "answer": {
-        "issue_summary": "Cannot connect to WiFi on a Windows laptop.",
+        "issue_summary": "WiFi disconnects after sleep on Windows 11 laptop",
         "likely_causes": [
-          "Incorrect WiFi password",
-          "Disabled WiFi adapter",
-          "Network issues",
-          "Driver problems",
-          "Software glitches"
+          "Power saving settings turning off the WiFi adapter",
+          "Driver issues",
+          "Network adapter hardware problem",
+          "Conflicting software"
         ],
         "plan_overview": [
-          "Perform quick checks (Airplane mode, router status)",
-          "Check WiFi adapter settings",
+          "Check quick fixes (power settings, adapter settings)",
           "Update or reinstall WiFi drivers",
-          "Troubleshoot network settings",
-          "Restart the computer and router",
-          "If all else fails, seek professional help"
+          "Run network troubleshooter",
+          "Check for conflicting software",
+          "Consider hardware issues if problems persist"
+        ],
+        "steps": [
+          {
+            "id": "1",
+            "title": "Check Power Saving Settings",
+            "rationale": "Windows may be turning off the WiFi adapter to save power during sleep.",
+            "action": "Open Device Manager, expand Network adapters, right-click on your WiFi adapter, select Properties, go to the Power Management tab, and uncheck \"Allow the computer to turn off this device to save power\".",
+            "os": "Windows",
+            "commands": [
+              "Start",
+              "Device Manager",
+              "Network adapters",
+              "WiFi adapter Properties",
+              "Power Management",
+              "Uncheck 'Allow the computer to turn off this device to save power'"
+            ],
+            "expect": "WiFi adapter remains on after sleep.",
+            "if_fails_next": "2"
+          },
+          {
+            "id": "2",
+            "title": "Update WiFi Drivers",
+            "rationale": "Outdated or corrupted drivers can cause connectivity issues.",
+            "action": "Open Device Manager, expand Network adapters, right-click on your WiFi adapter, select Update driver, and follow the on-screen instructions.  If updating fails, try uninstalling the driver and restarting your computer to reinstall it.",
+            "os": "Windows",
+            "commands": [
+              "Start",
+              "Device Manager",
+              "Network adapters",
+              "WiFi adapter Properties",
+              "Update driver"
+            ],
+            "expect": "Updated driver and improved WiFi connectivity",
+            "if_fails_next": "3"
+          },
+          {
+            "id": "3",
+            "title": "Run Network Troubleshooter",
+            "rationale": "Windows built-in troubleshooter can automatically detect and fix network problems.",
+            "action": "Open Settings, go to Network & internet, click on Troubleshoot, and run the network troubleshooter.",
+            "os": "Windows",
+            "commands": [
+              "Settings",
+              "Network & internet",
+              "Troubleshoot",
+              "Run network troubleshooter"
+            ],
+            "expect": "Troubleshooter identifies and fixes the issue.",
+            "if_fails_next": "4"
+          },
+          {
+            "id": "4",
+            "title": "Check for Conflicting Software",
+            "rationale": "Other software might interfere with the WiFi adapter.",
+            "action": "Temporarily disable recently installed software or antivirus programs to see if they are causing the issue.",
+            "os": "Windows",
+            "commands": [],
+            "expect": "Improved WiFi connectivity after disabling conflicting software.",
+            "if_fails_next": "5"
+          },
+          {
+            "id": "5",
+            "title": "Check Hardware",
+            "rationale": "If all software solutions fail, there might be a hardware problem with the WiFi adapter.",
+            "action": "Consult a professional technician or consider replacing the WiFi adapter.",
+            "os": "Windows",
+            "commands": [],
+            "expect": "Hardware issue identified and resolved.",
+            "if_fails_next": null
+          }
+        ],
+        "quick_checks": [
+          "Restart your computer",
+          "Check if other devices connect to the WiFi network",
+          "Check if the WiFi router is working correctly"
+        ],
+        "diagnostics_to_collect": [
+          "Event Viewer logs (for network errors)",
+          "Device Manager details for the WiFi adapter"
+        ],
+        "resolution_criteria": [
+          "WiFi connects reliably after sleep mode",
+          "No more disconnections observed"
+        ],
+        "escalation_criteria": [
+          "Hardware failure suspected",
+          "Issue persists after all troubleshooting steps"
+        ],
+        "safety_notes": [
+          "Always back up your data before making significant system changes",
+          "Be cautious when uninstalling drivers"
+        ],
+        "sources": [
+          "Microsoft Support",
+          "Various online forums and communities"
+        ],
+        "assumptions": [
+          "User has basic computer skills",
+          "User has administrative access to the computer"
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "query": "how to connect wifi in phone",
+      "answer": {
+        "issue_summary": "Connecting to Wi-Fi on a Windows laptop",
+        "likely_causes": [
+          "Incorrect Wi-Fi password",
+          "Disabled Wi-Fi adapter",
+          "Wi-Fi network out of range",
+          "Driver issues",
+          "Network configuration problems"
+        ],
+        "plan_overview": [
+          "Check quick fixes",
+          "Verify Wi-Fi adapter status",
+          "Check network settings",
+          "Update or reinstall drivers",
+          "Troubleshoot network configuration"
         ],
         "steps": [
           {
             "id": "1",
             "title": "Quick Checks",
-            "rationale": "Rule out simple issues before advanced troubleshooting.",
-            "action": "Check if Airplane mode is enabled. Check if the router is on and working correctly. Try connecting to a different WiFi network.",
+            "rationale": "These steps can quickly resolve common issues.",
+            "action": "Restart your laptop and check if the Wi-Fi connects automatically.  Check if your router is working correctly and other devices can connect.",
             "os": "Any",
             "commands": [],
-            "expect": "Airplane mode is off, router is working, and connection to another network is successful or unsuccessful.",
+            "expect": "Wi-Fi connects automatically after restart or router issue is resolved.",
             "if_fails_next": "2"
           },
           {
             "id": "2",
-            "title": "Check WiFi Adapter",
-            "rationale": "Ensure the WiFi adapter is enabled and functioning correctly.",
-            "action": "Open Network and Sharing Center. Click on 'Change adapter options'. Check if the WiFi adapter is enabled. If not, right-click and select 'Enable'.",
+            "title": "Verify Wi-Fi Adapter Status",
+            "rationale": "Ensure the Wi-Fi adapter is enabled and functioning correctly.",
+            "action": "Open the Network and Sharing Center (search for it in the Start menu). Click on 'Change adapter options'. Check if the Wi-Fi adapter is enabled. If not, right-click and select 'Enable'.",
             "os": "Windows",
-            "commands": [
-              "Open Network and Sharing Center",
-              "Click 'Change adapter options'",
-              "Check WiFi adapter status",
-              "Enable WiFi adapter if necessary"
-            ],
-            "expect": "WiFi adapter is enabled and functioning.",
+            "commands": [],
+            "expect": "Wi-Fi adapter is enabled and shows as connected.",
             "if_fails_next": "3"
           },
           {
             "id": "3",
-            "title": "Update WiFi Drivers",
-            "rationale": "Outdated drivers can cause connectivity issues.",
-            "action": "Open Device Manager. Expand 'Network adapters'. Right-click on the WiFi adapter and select 'Update driver'.",
+            "title": "Check Network Settings",
+            "rationale": "Ensure the correct network is selected and the password is correct.",
+            "action": "Click the Wi-Fi icon in the system tray. Select your Wi-Fi network and enter the password. If you have previously connected, ensure the network is still saved and the password is correct.",
             "os": "Windows",
-            "commands": [
-              "Open Device Manager",
-              "Expand 'Network adapters'",
-              "Right-click WiFi adapter",
-              "'Update driver'"
-            ],
-            "expect": "Drivers are updated successfully.",
+            "commands": [],
+            "expect": "Successful connection to the Wi-Fi network.",
             "if_fails_next": "4"
           },
           {
             "id": "4",
-            "title": "Troubleshoot Network Settings",
-            "rationale": "Network settings might be misconfigured.",
-            "action": "Open Network and Sharing Center. Click on 'Troubleshoot problems'. Follow the on-screen instructions.",
+            "title": "Update or Reinstall Drivers",
+            "rationale": "Outdated or corrupted drivers can cause connectivity problems.",
+            "action": "Open Device Manager (search for it in the Start menu). Expand 'Network adapters'. Right-click on your Wi-Fi adapter and select 'Update driver'. If this fails, try 'Uninstall device' and restart your computer to reinstall the driver automatically.",
             "os": "Windows",
-            "commands": [
-              "Open Network and Sharing Center",
-              "Click 'Troubleshoot problems'",
-              "Follow on-screen instructions"
-            ],
-            "expect": "Network problems are identified and resolved.",
+            "commands": [],
+            "expect": "Driver update or reinstall completes successfully and Wi-Fi connects.",
             "if_fails_next": "5"
           },
           {
             "id": "5",
-            "title": "Restart Computer and Router",
-            "rationale": "Restarting devices often resolves temporary software glitches.",
-            "action": "Restart your computer and your WiFi router. Wait for both to fully boot up before attempting to reconnect.",
-            "os": "Any",
-            "commands": [],
-            "expect": "Computer and router are restarted.",
+            "title": "Troubleshoot Network Configuration",
+            "rationale": "If all else fails, network configuration might be the problem.",
+            "action": "Open Command Prompt as administrator and run the following commands: ipconfig /release, ipconfig /renew, netsh winsock reset. Restart your computer after running these commands.",
+            "os": "Windows",
+            "commands": [
+              "ipconfig /release",
+              "ipconfig /renew",
+              "netsh winsock reset"
+            ],
+            "expect": "Network configuration is reset, and Wi-Fi connects.",
             "if_fails_next": "6"
           },
           {
             "id": "6",
-            "title": "Seek Professional Help",
-            "rationale": "If all previous steps fail, the issue might require professional assistance.",
-            "action": "Contact your internet service provider or a computer technician for further assistance.",
+            "title": "Escalate",
+            "rationale": "If the issue persists after all steps, further assistance is needed.",
+            "action": "Contact your internet service provider or a qualified technician for advanced troubleshooting.",
             "os": "Any",
             "commands": [],
-            "expect": "Professional help is sought.",
+            "expect": "Issue is resolved by a professional.",
             "if_fails_next": null
           }
         ],
         "quick_checks": [
-          "Check if Airplane mode is on",
-          "Check if the router is working correctly",
-          "Try connecting to a different WiFi network"
+          "Restart your laptop",
+          "Check router functionality",
+          "Check for physical obstructions between laptop and router"
         ],
         "diagnostics_to_collect": [
-          "Screenshots of network settings",
-          "Error messages",
-          "Router model and firmware version"
+          "Screenshots of network adapter settings",
+          "Screenshots of network connection errors",
+          "Event logs related to network connectivity"
         ],
         "resolution_criteria": [
-          "Successful WiFi connection",
+          "Successful connection to the Wi-Fi network",
           "Stable internet access"
         ],
         "escalation_criteria": [
-          "Unable to connect to WiFi after trying all steps",
+          "Unable to connect to Wi-Fi after trying all troubleshooting steps",
           "Suspected hardware failure"
+        ],
+        "safety_notes": [
+          "Always back up important data before making significant system changes.",
+          "Be cautious when running commands in the Command Prompt."
+        ],
+        "sources": [
+          "Microsoft support documentation",
+          "General networking troubleshooting guides"
+        ],
+        "assumptions": [
+          "Basic computer skills",
+          "Access to administrator privileges"
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "query": "I can\u2019t connect WiFi on my phone.",
+      "answer": {
+        "issue_summary": "Cannot connect to WiFi on a Windows laptop",
+        "likely_causes": [
+          "WiFi adapter issues",
+          "Incorrect network settings",
+          "Router problems",
+          "Driver issues",
+          "Software glitches"
+        ],
+        "plan_overview": [
+          "Perform quick checks",
+          "Restart the laptop and router",
+          "Check WiFi adapter settings",
+          "Update or reinstall WiFi drivers",
+          "Troubleshoot network settings",
+          "Run network troubleshooter"
+        ],
+        "steps": [
+          {
+            "id": "1",
+            "title": "Quick Checks",
+            "rationale": "Rule out simple issues first",
+            "action": "Check if WiFi is enabled on the laptop and if the router is on and broadcasting the network.  Check for physical obstructions between the laptop and router.",
+            "os": "Any",
+            "commands": [],
+            "expect": "WiFi is enabled, router is on, no obstructions",
+            "if_fails_next": "2"
+          },
+          {
+            "id": "2",
+            "title": "Restart Laptop and Router",
+            "rationale": "Resets network connections and clears temporary glitches",
+            "action": "Restart your laptop. Unplug the router's power cord, wait 30 seconds, and plug it back in.",
+            "os": "Any",
+            "commands": [],
+            "expect": "Laptop and router restart successfully",
+            "if_fails_next": "3"
+          },
+          {
+            "id": "3",
+            "title": "Check WiFi Adapter Settings",
+            "rationale": "Ensure the WiFi adapter is correctly configured",
+            "action": "Go to Network and Sharing Center (search for it in the Start Menu). Click on \"Change adapter options\". Right-click on your WiFi adapter and select \"Properties\". Check if the adapter is enabled. Check the TCP/IP settings (IPv4 or IPv6) and ensure they are set to obtain an IP address automatically.",
+            "os": "Windows",
+            "commands": [],
+            "expect": "WiFi adapter is enabled and configured correctly",
+            "if_fails_next": "4"
+          },
+          {
+            "id": "4",
+            "title": "Update or Reinstall WiFi Drivers",
+            "rationale": "Outdated or corrupted drivers can cause connectivity issues",
+            "action": "Go to Device Manager (search for it in the Start Menu). Expand \"Network adapters\". Right-click on your WiFi adapter and select \"Update driver\". If that fails, try uninstalling the driver and restarting the laptop. Windows will usually automatically reinstall the driver.",
+            "os": "Windows",
+            "commands": [],
+            "expect": "WiFi drivers are updated or reinstalled",
+            "if_fails_next": "5"
+          },
+          {
+            "id": "5",
+            "title": "Troubleshoot Network Settings",
+            "rationale": "Check for incorrect network configurations",
+            "action": "Open Network and Sharing Center. Click on \"Troubleshoot problems\". Follow the on-screen instructions.",
+            "os": "Windows",
+            "commands": [],
+            "expect": "Network troubleshooter identifies and fixes issues",
+            "if_fails_next": "6"
+          },
+          {
+            "id": "6",
+            "title": "Run Network Troubleshooter",
+            "rationale": "Windows built-in troubleshooter can detect and fix common network problems",
+            "action": "Search for \"Network troubleshooter\" in the Start Menu and run it. Follow the on-screen instructions.",
+            "os": "Windows",
+            "commands": [],
+            "expect": "Troubleshooter identifies and resolves the issue",
+            "if_fails_next": "7"
+          },
+          {
+            "id": "7",
+            "title": "Check Router Settings",
+            "rationale": "Router misconfiguration can prevent connection",
+            "action": "Access your router's configuration page (usually by typing 192.168.1.1 or 192.168.0.1 in your browser). Check the WiFi settings, including the SSID and password. Ensure that the router's firmware is up-to-date.",
+            "os": "Any",
+            "commands": [],
+            "expect": "Router settings are correct and firmware is up-to-date",
+            "if_fails_next": "8"
+          },
+          {
+            "id": "8",
+            "title": "Escalate",
+            "rationale": "If all else fails, seek professional help",
+            "action": "Contact your internet service provider or a computer technician for further assistance.",
+            "os": "Any",
+            "commands": [],
+            "expect": "Issue resolved by professional",
+            "if_fails_next": null
+          }
+        ],
+        "quick_checks": [
+          "Is WiFi enabled on the laptop?",
+          "Is the router on and broadcasting the network?",
+          "Are there any physical obstructions between the laptop and router?"
+        ],
+        "diagnostics_to_collect": [
+          "Screenshots of network settings",
+          "Router model and firmware version",
+          "WiFi adapter details"
+        ],
+        "resolution_criteria": [
+          "Laptop successfully connects to WiFi network"
+        ],
+        "escalation_criteria": [
+          "Issue persists after all troubleshooting steps"
         ],
         "safety_notes": [
           "Always back up important data before making significant system changes."
         ],
         "sources": [
           "Microsoft support website",
-          "Various online tech forums"
+          "Router manufacturer's website"
         ],
         "assumptions": [
           "Basic computer skills",
-          "Access to internet for driver updates"
+          "Access to the internet (for driver updates)"
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "query": "wifi is not working how to connect",
+      "answer": {
+        "issue_summary": "Wi-Fi not working on Windows laptop",
+        "likely_causes": [
+          "Incorrect network settings",
+          "Airplane mode enabled",
+          "Outdated or corrupted drivers",
+          "Router or modem issues",
+          "Internet service provider (ISP) outage"
+        ],
+        "plan_overview": [
+          "Perform quick checks (Wi-Fi enabled, Airplane mode off)",
+          "Restart the modem and router",
+          "Forget and reconnect to the Wi-Fi network",
+          "Check and update Wi-Fi drivers",
+          "Check for ISP outages"
+        ],
+        "steps": [
+          {
+            "id": "1",
+            "title": "Quick Checks",
+            "rationale": "Rule out simple issues before proceeding to more complex troubleshooting steps.",
+            "action": "Verify Wi-Fi is enabled and Airplane mode is disabled.",
+            "os": "Windows",
+            "commands": [
+              "Check the Wi-Fi icon in the system tray. Ensure it's enabled.",
+              "Go to Settings > Network & Internet > Airplane mode. Ensure it's turned off."
+            ],
+            "expect": "Wi-Fi is enabled and Airplane mode is off.",
+            "if_fails_next": "2"
+          },
+          {
+            "id": "2",
+            "title": "Restart Modem and Router",
+            "rationale": "A restart often resolves temporary glitches in network devices.",
+            "action": "Power cycle the modem and router.",
+            "os": "Any",
+            "commands": [
+              "Unplug the power cables of both the modem and router.",
+              "Wait 30 seconds.",
+              "Plug the modem back in, wait for it to fully boot.",
+              "Plug the router back in, wait for it to fully boot."
+            ],
+            "expect": "Modem and router lights indicate they are online.",
+            "if_fails_next": "3"
+          },
+          {
+            "id": "3",
+            "title": "Forget and Reconnect to Wi-Fi",
+            "rationale": "This can resolve issues with incorrect network settings.",
+            "action": "Remove the current Wi-Fi network profile and reconnect.",
+            "os": "Windows",
+            "commands": [
+              "Go to Settings > Network & Internet > Wi-Fi > Manage known networks.",
+              "Select your Wi-Fi network and click \"Forget\".",
+              "Reconnect to the network by entering the password."
+            ],
+            "expect": "Successful connection to the Wi-Fi network.",
+            "if_fails_next": "4"
+          },
+          {
+            "id": "4",
+            "title": "Check and Update Wi-Fi Drivers",
+            "rationale": "Outdated or corrupted drivers can prevent Wi-Fi connectivity.",
+            "action": "Check for and install the latest Wi-Fi drivers.",
+            "os": "Windows",
+            "commands": [
+              "Open Device Manager (search for it in the Start Menu).",
+              "Expand \"Network adapters\".",
+              "Right-click on your Wi-Fi adapter and select \"Update driver\".",
+              "Follow the on-screen instructions."
+            ],
+            "expect": "Updated Wi-Fi drivers and successful connection.",
+            "if_fails_next": "5"
+          },
+          {
+            "id": "5",
+            "title": "Check for ISP Outages",
+            "rationale": "Internet connectivity issues may stem from the ISP.",
+            "action": "Check the ISP's website or contact support for outages.",
+            "os": "Any",
+            "commands": [],
+            "expect": "Confirmation of an outage or no outage reported.",
+            "if_fails_next": "6"
+          },
+          {
+            "id": "6",
+            "title": "Escalate",
+            "rationale": "If all previous steps fail, further investigation is needed.",
+            "action": "Contact your ISP or a qualified technician for advanced troubleshooting.",
+            "os": "Any",
+            "commands": [],
+            "expect": "Issue resolved by a professional.",
+            "if_fails_next": null
+          }
+        ],
+        "quick_checks": [
+          "Check if Wi-Fi is enabled on the laptop.",
+          "Check if Airplane mode is disabled."
+        ],
+        "diagnostics_to_collect": [
+          "Screenshots of network settings",
+          "Details of Wi-Fi adapter (from Device Manager)",
+          "Router model and firmware version"
+        ],
+        "resolution_criteria": [
+          "Successful Wi-Fi connection",
+          "Ability to access the internet"
+        ],
+        "escalation_criteria": [
+          "All troubleshooting steps have been exhausted without success.",
+          "Suspected hardware failure."
+        ],
+        "safety_notes": [
+          "Always back up important data before making significant system changes.",
+          "Avoid opening suspicious links or attachments."
+        ],
+        "sources": [
+          "Windows documentation",
+          "Various online troubleshooting guides"
+        ],
+        "assumptions": [
+          "The user has administrative privileges on their laptop.",
+          "The user has the correct Wi-Fi password."
         ],
         "confidence": 0.8
       }

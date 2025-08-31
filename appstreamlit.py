@@ -3,17 +3,6 @@ import asyncio
 import json
 from techmate_agent import techmate_agent, TechMateOutput
 
-def run_async(coro):
-    try:
-        loop = asyncio.get_running_loop()
-    except RuntimeError:
-        loop = None
-    if loop and loop.is_running():
-        # Run in thread-safe way
-        return asyncio.run_coroutine_threadsafe(coro, loop).result()
-    else:
-        return asyncio.run(coro)
-    
 st.set_page_config(page_title="🤖 TechMate Assistant", layout="wide")
 
 st.title("🤖 TechMate – AI Troubleshooter")
@@ -35,10 +24,9 @@ query = st.text_input("🔎 Describe your issue:", placeholder="e.g., WiFi disco
 if st.button("🚀 Ask TechMate") and query:
     with st.spinner("🔍 Searching the web, retrieving snippets, and planning steps..."):
         try:
-            plan: TechMateOutput = run_async(
-    techmate_agent(query, device=device, os_name=os_name, symptoms=symptoms, constraints=constraints)
-)
-
+            plan: TechMateOutput = asyncio.run(
+                techmate_agent(query, device=device, os_name=os_name, symptoms=symptoms, constraints=constraints)
+            )
 
             st.success("✅ Troubleshooting plan generated!")
 
