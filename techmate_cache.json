@@ -495,6 +495,129 @@
         ],
         "confidence": 0.8
       }
+    },
+    {
+      "query": "How to deploy streamlit app on its community cloud?",
+      "answer": {
+        "issue_summary": "Deploying a Streamlit app on Streamlit Community Cloud",
+        "likely_causes": [
+          "Incorrect configuration of the Streamlit app",
+          "Issues with the Streamlit Community Cloud account",
+          "Problems with the GitHub repository connection",
+          "Insufficient permissions"
+        ],
+        "plan_overview": [
+          "Verify Streamlit app setup",
+          "Check Streamlit Cloud account and settings",
+          "Connect GitHub repository",
+          "Deploy the app and troubleshoot deployment issues"
+        ],
+        "steps": [
+          {
+            "id": "1",
+            "title": "Verify Streamlit app setup",
+            "rationale": "Ensure the app is correctly structured and dependencies are managed",
+            "action": "Check the Streamlit app's file structure, requirements.txt, and any environment-specific configurations.",
+            "os": "Any",
+            "commands": [],
+            "expect": "A well-structured Streamlit app with all necessary files and dependencies",
+            "if_fails_next": "2"
+          },
+          {
+            "id": "2",
+            "title": "Check Streamlit Cloud account and settings",
+            "rationale": "Ensure you have a valid Streamlit Cloud account and that the settings are correctly configured",
+            "action": "Log in to Streamlit Cloud (share.streamlit.io). Verify account status and settings. Check for any errors or warnings.",
+            "os": "Any",
+            "commands": [],
+            "expect": "Successful login and no errors in account settings",
+            "if_fails_next": "7"
+          },
+          {
+            "id": "3",
+            "title": "Connect GitHub repository",
+            "rationale": "Streamlit Cloud needs access to your app's code on GitHub",
+            "action": "In Streamlit Cloud, connect your GitHub account and select the repository containing your Streamlit app. Authorize Streamlit Cloud to access the repository.",
+            "os": "Any",
+            "commands": [],
+            "expect": "Successful connection to the GitHub repository",
+            "if_fails_next": "7"
+          },
+          {
+            "id": "4",
+            "title": "Deploy the app",
+            "rationale": "Deploy the app to Streamlit Cloud",
+            "action": "In Streamlit Cloud, initiate the deployment process. Select the correct branch and entry point file for your app.",
+            "os": "Any",
+            "commands": [],
+            "expect": "Successful deployment of the app",
+            "if_fails_next": "5"
+          },
+          {
+            "id": "5",
+            "title": "Check the app URL",
+            "rationale": "Verify the app is accessible via the provided URL",
+            "action": "Access the URL provided by Streamlit Cloud to check if the app is running correctly.",
+            "os": "Any",
+            "commands": [],
+            "expect": "The Streamlit app loads successfully in the browser",
+            "if_fails_next": "6"
+          },
+          {
+            "id": "6",
+            "title": "Troubleshooting deployment issues",
+            "rationale": "If the app fails to deploy or doesn't work correctly, investigate potential issues",
+            "action": "Check Streamlit Cloud logs for errors. Review the app's code for any issues. Verify dependencies are correctly installed and configured. Check for any network connectivity problems.",
+            "os": "Any",
+            "commands": [],
+            "expect": "Identify and resolve the root cause of the deployment issue",
+            "if_fails_next": "7"
+          },
+          {
+            "id": "7",
+            "title": "Escalate to Streamlit support",
+            "rationale": "If the issue persists after troubleshooting, contact Streamlit support",
+            "action": "Contact Streamlit support via their official channels to report the issue and provide relevant information (logs, screenshots, etc.)",
+            "os": "Any",
+            "commands": [],
+            "expect": "Streamlit support assists in resolving the issue",
+            "if_fails_next": null
+          }
+        ],
+        "quick_checks": [
+          "Check your internet connection",
+          "Ensure Streamlit is installed correctly",
+          "Verify the app runs locally without errors"
+        ],
+        "diagnostics_to_collect": [
+          "Streamlit Cloud logs",
+          "App code",
+          "requirements.txt file",
+          "Screenshots of errors"
+        ],
+        "resolution_criteria": [
+          "App successfully deploys and runs on Streamlit Cloud",
+          "User can access and interact with the app"
+        ],
+        "escalation_criteria": [
+          "Unable to deploy the app after troubleshooting",
+          "App fails to run correctly despite successful deployment"
+        ],
+        "safety_notes": [
+          "Always back up your code before making changes",
+          "Be cautious when granting access to your GitHub repository"
+        ],
+        "sources": [
+          "https://docs.streamlit.io/streamlit-cloud/get-started",
+          "https://docs.streamlit.io/streamlit-cloud/deploy-your-app"
+        ],
+        "assumptions": [
+          "User has a Streamlit app ready for deployment",
+          "User has a GitHub account and repository",
+          "User has a Streamlit Community Cloud account"
+        ],
+        "confidence": 0.9
+      }
     }
   ]
 }

@@ -54,17 +54,17 @@ if st.button("🚀 Ask TechMate") and query:
                     if step.if_fails_next:
                         st.markdown(f"➡️ If fails, go to: {step.if_fails_next}")
 
-            st.subheader("🧪 Diagnostics to Collect")
-            st.write(plan.diagnostics_to_collect)
+            # st.subheader("🧪 Diagnostics to Collect")
+            # st.write(plan.diagnostics_to_collect)
 
-            st.subheader("✅ Resolution Criteria")
-            st.write(plan.resolution_criteria)
+            # st.subheader("✅ Resolution Criteria")
+            # st.write(plan.resolution_criteria)
 
-            st.subheader("📈 Escalation Criteria")
-            st.write(plan.escalation_criteria)
+            # st.subheader("📈 Escalation Criteria")
+            # st.write(plan.escalation_criteria)
 
-            st.subheader("⚠️ Safety Notes")
-            st.write(plan.safety_notes)
+            # st.subheader("⚠️ Safety Notes")
+            # st.write(plan.safety_notes)
 
             st.subheader("🔗 Sources")
             for src in plan.sources:
