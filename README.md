@@ -24,6 +24,15 @@ It helps users query information, get summarized results, and perform advanced r
 - **Google Generative AI (Gemini API)** – LLM for reasoning and summarization  
 - **SerpAPI / Web Scraping (httpx + BeautifulSoup)** – Search results  
 
+
+## 🏗️ System Design
+
+1. **User Interaction:** Users send tech-related queries through the interface 💬.
+2. **Query Processing:** Queries are sent to the Node.js server, which passes them to LLM Gemini with a system prompt for structured answers 🧠.
+3. **Data Retrieval:** Gemini fetches and organizes relevant web search results 🌐.
+4. **Stepwise Response:** Solutions are presented step by step, automatically progressing if one step fails 🔄.
+5. **Response Delivery:** Curated answers are sent back to the user in a clear, conversational format 📩.
+
 ---
 
 
