@@ -1,0 +1,30 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: techmate-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data  # Keep FAISS index saved on your local machine
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: techmate-frontend
+    ports:
+      - "8501:8501"
+    environment:
+      # Tell the frontend to talk to the backend container
+      - API_URL=http://backend:8000/api/chat 
+    depends_on:
+      - backend
+    restart: unless-stopped

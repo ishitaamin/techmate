@@ -1,0 +1,25 @@
+# Web Framework & Server
+fastapi
+uvicorn
+
+# Frontend
+streamlit
+requests
+
+# AI & Machine Learning
+google-generativeai
+sentence-transformers
+faiss-cpu
+numpy
+langgraph
+langchain-core
+langchain-google-genai
+
+# Scraping & Web Requests
+httpx
+beautifulsoup4
+tavily-python
+
+# Utilities
+python-dotenv
+pydantic

@@ -1,0 +1,11 @@
+# Environments
+.env
+__pycache__/
+*.pyc
+
+# Virtual Environments
+venv/
+env/
+
+# Database & Vector Store (Do not upload user sessions or large FAISS indexes)
+data/
